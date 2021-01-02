@@ -35,6 +35,7 @@ $(function () {
                 if (res.status) {
                     return layer.msg(res.message);
                 }
+                localStorage.setItem("token",res.token)
                 layer.msg(res.message, {
                     icon: 1,
                     time: 1000 //2秒关闭（如果不配置，默认是3秒）
