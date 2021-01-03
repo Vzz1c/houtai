@@ -5,10 +5,8 @@ $.ajaxPrefilter(function (options) {
             Authorization:localStorage.getItem("token") || ""
         }
     }
-    options.complete=function (res) {
-        console.log(res)                                                //"身份认证失败！"
+    options.complete=function (res) {         //"身份认证失败！"
         if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
-            console.log("测试111")
             localStorage.removeItem("token");
             location.href="login.html"
         }

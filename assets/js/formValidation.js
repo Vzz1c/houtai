@@ -17,9 +17,14 @@ form.verify({
         ,'密码必须6到12位，且不能出现空格'
     ],
     repwd: function (value) {
-        let val = $(".reg-box input[name=password]").val();
+        let val = $("#rePwd").val();
         if (val !== value) {
             return '两次密码不相同';
+        }
+    },
+    nickname: function (value) {
+        if (value.length > 6) {
+            return "昵称长度不对"
         }
     }
 });
